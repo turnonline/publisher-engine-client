@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.ctoolkit.maven</groupId>
+        <artifactId>ctoolkit-private</artifactId>
+        <version>7</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>biz.turnonline.publisher</groupId>
+    <artifactId>publisher-engine-client</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>CtoolkiT API Client - Publisher Engine</name>
+    <description>CtoolkiT REST API java client implementation of the Publisher Content Engine</description>
+
+    <scm>
+        <connection>scm:git:[fetch=]git@github.com:turnonline/publisher-engine-client.git</connection>
+        <developerConnection>scm:git:[push=]git@github.com:turnonline/publisher-engine-client.git</developerConnection>
+        <url>https://github.com/turnonline/publisher-engine-client</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://youtrack.turnonline.biz/youtrack/issues/TOB</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <name>Aurel Medvegy</name>
+            <id>medvegy</id>
+            <email>medvegy@turnonline.biz</email>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>biz.turnonline.publisher</groupId>
+            <artifactId>publisher</artifactId>
+            <version>v1-1.22.0-20170703.144657-1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-adapter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ctoolkit.maven</groupId>
+                <artifactId>ctoolkit-library-bom</artifactId>
+                <version>5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.ctoolkit.restapi</groupId>
+                <artifactId>ctoolkit-rest-facade-api</artifactId>
+                <version>0.16</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ctoolkit.restapi</groupId>
+                <artifactId>ctoolkit-rest-facade-adapter</artifactId>
+                <version>0.23-20170702.063526-13</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
