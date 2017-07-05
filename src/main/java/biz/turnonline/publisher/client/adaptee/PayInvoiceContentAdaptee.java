@@ -36,7 +36,7 @@ public class PayInvoiceContentAdaptee
                                  @Nullable MediaProvider provider )
             throws IOException
     {
-        return null;
+        return client().invoice().update( identifier.getLong(), identifier.child().getString(), resource );
     }
 
     @Override
@@ -45,13 +45,13 @@ public class PayInvoiceContentAdaptee
                                  @Nullable Locale locale )
             throws IOException
     {
-        return null;
+        return execute( request, parameters, locale );
     }
 
     @Override
     public Object prepareDelete( @Nonnull Identifier identifier ) throws IOException
     {
-        return null;
+        return client().invoice().delete( identifier.getLong(), identifier.child().getString() );
     }
 
     @Override
@@ -60,6 +60,6 @@ public class PayInvoiceContentAdaptee
                                @Nullable Locale locale )
             throws IOException
     {
-
+        execute( request, parameters, locale );
     }
 }

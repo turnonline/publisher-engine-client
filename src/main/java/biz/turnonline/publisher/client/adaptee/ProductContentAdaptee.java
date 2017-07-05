@@ -36,7 +36,7 @@ public class ProductContentAdaptee
                                  @Nullable MediaProvider provider )
             throws IOException
     {
-        return null;
+        return client().product().update( identifier.getLong(), identifier.child().getString(), resource );
     }
 
     @Override
@@ -45,13 +45,13 @@ public class ProductContentAdaptee
                                  @Nullable Locale locale )
             throws IOException
     {
-        return null;
+        return execute( request, parameters, locale );
     }
 
     @Override
     public Object prepareDelete( @Nonnull Identifier identifier ) throws IOException
     {
-        return null;
+        return client().product().delete( identifier.getLong(), identifier.child().getString() );
     }
 
     @Override
@@ -60,6 +60,6 @@ public class ProductContentAdaptee
                                @Nullable Locale locale )
             throws IOException
     {
-
+        execute( request, parameters, locale );
     }
 }
