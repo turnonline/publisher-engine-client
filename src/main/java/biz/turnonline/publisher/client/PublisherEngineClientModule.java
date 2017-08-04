@@ -16,6 +16,8 @@ import com.google.api.client.http.HttpTransport;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.TypeLiteral;
+import org.ctoolkit.restapi.client.AccessToken;
+import org.ctoolkit.restapi.client.ApiToken;
 import org.ctoolkit.restapi.client.RemoteServerErrorException;
 import org.ctoolkit.restapi.client.UnauthorizedException;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
@@ -40,6 +42,8 @@ public class PublisherEngineClientModule
     public static final String API_PREFIX = "publisher-engine";
 
     private static final Logger logger = LoggerFactory.getLogger( PublisherEngineClientModule.class );
+
+    private ApiToken<? extends HttpRequestInitializer> initialized;
 
     @Override
     protected void configure()
@@ -87,9 +91,10 @@ public class PublisherEngineClientModule
         try
         {
             HttpTransport httpTransport = factory.getHttpTransport();
-            HttpRequestInitializer initializer = factory.authorize( scopes, null, API_PREFIX );
+            initialized = factory.authorize( scopes, null, API_PREFIX );
+            HttpRequestInitializer credential = initialized.getCredential();
 
-            builder = new Publisher.Builder( httpTransport, factory.getJsonFactory(), initializer )
+            builder = new Publisher.Builder( httpTransport, factory.getJsonFactory(), credential )
                     .setApplicationName( applicationName )
                     .setRootUrl( endpointUrl );
         }
@@ -113,5 +118,13 @@ public class PublisherEngineClientModule
         }
 
         return builder.build();
+    }
+
+    @Provides
+    @AccessToken( apiName = API_PREFIX )
+    ApiToken.Data providePublisherApiTokenData( Publisher client )
+    {
+        initialized.setServiceUrl( client.getBaseUrl() );
+        return initialized.getTokenData();
     }
 }

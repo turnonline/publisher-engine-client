@@ -96,12 +96,12 @@
             <dependency>
                 <groupId>org.ctoolkit.restapi</groupId>
                 <artifactId>ctoolkit-rest-facade-api</artifactId>
-                <version>0.16</version>
+                <version>0.18</version>
             </dependency>
             <dependency>
                 <groupId>org.ctoolkit.restapi</groupId>
                 <artifactId>ctoolkit-rest-facade-adapter</artifactId>
-                <version>0.23</version>
+                <version>0.24-20170804.065541-5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
