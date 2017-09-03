@@ -39,7 +39,7 @@
         <dependency>
             <groupId>biz.turnonline.publisher</groupId>
             <artifactId>publisher</artifactId>
-            <version>v1-1.22.0-20170710.145516-2</version>
+            <version>v1-1.22.0-20170903.094853-5</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
