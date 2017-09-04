@@ -38,8 +38,8 @@
     <dependencies>
         <dependency>
             <groupId>biz.turnonline.publisher</groupId>
-            <artifactId>publisher</artifactId>
-            <version>v1-1.22.0-20170903.094853-5</version>
+            <artifactId>publisher-engine-gen-lib</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
