@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>biz.turnonline.publisher</groupId>
     <artifactId>publisher-engine-client</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>CtoolkiT API Client - Publisher Engine</name>
     <description>CtoolkiT REST API java client implementation of the Publisher Content Engine</description>
@@ -19,7 +19,7 @@
         <connection>scm:git:[fetch=]git@github.com:turnonline/publisher-engine-client.git</connection>
         <developerConnection>scm:git:[push=]git@github.com:turnonline/publisher-engine-client.git</developerConnection>
         <url>https://github.com/turnonline/publisher-engine-client</url>
-        <tag>publisher-engine-client-1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
