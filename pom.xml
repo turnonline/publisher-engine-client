@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>org.ctoolkit.maven</groupId>
-        <artifactId>ctoolkit-private</artifactId>
-        <version>7</version>
+        <groupId>biz.turnonline.ecosystem</groupId>
+        <artifactId>turnonline-private</artifactId>
+        <version>1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>biz.turnonline.publisher</groupId>
-    <artifactId>publisher-engine-client</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <artifactId>turnonline-publisher-engine-client</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>CtoolkiT API Client - Publisher Engine</name>
-    <description>CtoolkiT REST API java client implementation of the Publisher Content Engine</description>
+    <name>Publisher &amp; Content Engine Java Client</name>
+    <description>Publisher &amp; Content Engine REST API Java Client</description>
 
     <scm>
         <connection>scm:git:[fetch=]git@github.com:turnonline/publisher-engine-client.git</connection>
@@ -34,75 +34,46 @@
         </developer>
     </developers>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ctoolkit.maven</groupId>
+                <artifactId>ctoolkit-library-bom</artifactId>
+                <version>${ctoolkit-library-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
-            <groupId>biz.turnonline.publisher</groupId>
-            <artifactId>publisher-engine-gen-lib</artifactId>
-            <version>1.0</version>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-api</artifactId>
+            <version>${ctoolkit-rest-facade-api.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-adapter</artifactId>
+            <version>${ctoolkit-rest-facade-adapter.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.api-client</groupId>
             <artifactId>google-api-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.ctoolkit.restapi</groupId>
-            <artifactId>ctoolkit-rest-facade-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.ctoolkit.restapi</groupId>
-            <artifactId>ctoolkit-rest-facade-adapter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-        </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.ctoolkit.maven</groupId>
-                <artifactId>ctoolkit-library-bom</artifactId>
-                <version>5</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.ctoolkit.restapi</groupId>
-                <artifactId>ctoolkit-rest-facade-api</artifactId>
-                <version>0.19</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ctoolkit.restapi</groupId>
-                <artifactId>ctoolkit-rest-facade-adapter</artifactId>
-                <version>0.24</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+    <properties>
+        <ctoolkit-library-bom.version>9</ctoolkit-library-bom.version>
+        <ctoolkit-rest-facade-api.version>0.24</ctoolkit-rest-facade-api.version>
+        <ctoolkit-rest-facade-adapter.version>0.28</ctoolkit-rest-facade-adapter.version>
+    </properties>
 </project>

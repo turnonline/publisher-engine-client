@@ -1,7 +1,7 @@
-package biz.turnonline.publisher.client.adaptee;
+package biz.turnonline.ecosystem.publisher.facade.adaptee;
 
-import biz.turnonline.publisher.publisher.Publisher;
-import biz.turnonline.publisher.publisher.model.TermsContent;
+import biz.turnonline.ecosystem.publisher.Publisher;
+import biz.turnonline.ecosystem.publisher.model.TermsContent;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
 import org.ctoolkit.restapi.client.adapter.AbstractUpdateExecutorAdaptee;

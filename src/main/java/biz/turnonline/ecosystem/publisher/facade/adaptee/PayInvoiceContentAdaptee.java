@@ -1,7 +1,7 @@
-package biz.turnonline.publisher.client.adaptee;
+package biz.turnonline.ecosystem.publisher.facade.adaptee;
 
-import biz.turnonline.publisher.publisher.Publisher;
-import biz.turnonline.publisher.publisher.model.PayInvoiceContent;
+import biz.turnonline.ecosystem.publisher.Publisher;
+import biz.turnonline.ecosystem.publisher.model.PayInvoiceContent;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -55,11 +55,11 @@ public class PayInvoiceContentAdaptee
     }
 
     @Override
-    public void executeDelete( @Nonnull Object request,
-                               @Nullable Map<String, Object> parameters,
-                               @Nullable Locale locale )
+    public Object executeDelete( @Nonnull Object request,
+                                 @Nullable Map<String, Object> parameters,
+                                 @Nullable Locale locale )
             throws IOException
     {
-        execute( request, parameters );
+        return execute( request, parameters );
     }
 }
