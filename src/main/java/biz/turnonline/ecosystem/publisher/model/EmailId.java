@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.publisher.model;
 
 /**
- * Model definition for EmailFrom.
+ * Model definition for EmailId.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Publisher & Content Engine. For a
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.publisher.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class EmailFrom
+public final class EmailId
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,58 +38,36 @@ public final class EmailFrom
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String email;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String name;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long id;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getEmail()
+    public java.lang.Long getId()
     {
-        return email;
+        return id;
     }
 
     /**
-     * @param email email or {@code null} for none
+     * @param id id or {@code null} for none
      */
-    public EmailFrom setEmail( java.lang.String email )
+    public EmailId setId( java.lang.Long id )
     {
-        this.email = email;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getName()
-    {
-        return name;
-    }
-
-    /**
-     * @param name name or {@code null} for none
-     */
-    public EmailFrom setName( java.lang.String name )
-    {
-        this.name = name;
+        this.id = id;
         return this;
     }
 
     @Override
-    public EmailFrom set( String fieldName, Object value )
+    public EmailId set( String fieldName, Object value )
     {
-        return ( EmailFrom ) super.set( fieldName, value );
+        return ( EmailId ) super.set( fieldName, value );
     }
 
     @Override
-    public EmailFrom clone()
+    public EmailId clone()
     {
-        return ( EmailFrom ) super.clone();
+        return ( EmailId ) super.clone();
     }
 
 }
