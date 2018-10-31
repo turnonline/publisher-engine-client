@@ -367,7 +367,6 @@ public class PublisherEmail
     {
         ACCOUNT_REGISTRATION,
         EVENT,
-        ISSUED_INVOICE,
-        ISSUED_PROFORMA_INVOICE
+        ISSUED_INVOICE
     }
 }
