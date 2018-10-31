@@ -365,7 +365,7 @@ public class PublisherEmail
      */
     public enum Template
     {
-        ACCOUNT_REGISTRATION,
+        ACCOUNT_SIGN_UP,
         EVENT,
         ISSUED_INVOICE
     }
