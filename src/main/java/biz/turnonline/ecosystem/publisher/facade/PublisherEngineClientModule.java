@@ -4,6 +4,7 @@ import biz.turnonline.ecosystem.publisher.Publisher;
 import biz.turnonline.ecosystem.publisher.PublisherScopes;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.common.base.Strings;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import org.ctoolkit.restapi.client.AccessToken;
@@ -51,9 +52,13 @@ public class PublisherEngineClientModule
             initialized = factory.authorize( scopes, null, API_PREFIX );
             HttpRequestInitializer credential = initialized.getCredential();
 
-            builder = new Publisher.Builder( httpTransport, factory.getJsonFactory(), credential )
-                    .setApplicationName( applicationName )
-                    .setRootUrl( endpointUrl );
+            builder = new Publisher.Builder( httpTransport, factory.getJsonFactory(), credential );
+            builder.setApplicationName( applicationName );
+
+            if ( !Strings.isNullOrEmpty( endpointUrl ) )
+            {
+                builder.setRootUrl( endpointUrl );
+            }
         }
         catch ( GeneralSecurityException e )
         {
