@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.publisher.model;
 
 /**
- * Model definition for EmailReplyTo.
+ * Model definition for EventContentBegin.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Publisher & Content Engine. For a
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.publisher.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class EmailReplyTo
+public final class EventContentBegin
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,58 +38,104 @@ public final class EmailReplyTo
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String email;
+    private java.lang.Integer from;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String name;
+    private com.google.api.client.util.DateTime on;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Boolean show;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Integer to;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getEmail()
+    public java.lang.Integer getFrom()
     {
-        return email;
+        return from;
     }
 
     /**
-     * @param email email or {@code null} for none
+     * @param from from or {@code null} for none
      */
-    public EmailReplyTo setEmail( java.lang.String email )
+    public EventContentBegin setFrom( java.lang.Integer from )
     {
-        this.email = email;
+        this.from = from;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getName()
+    public com.google.api.client.util.DateTime getOn()
     {
-        return name;
+        return on;
     }
 
     /**
-     * @param name name or {@code null} for none
+     * @param on on or {@code null} for none
      */
-    public EmailReplyTo setName( java.lang.String name )
+    public EventContentBegin setOn( com.google.api.client.util.DateTime on )
     {
-        this.name = name;
+        this.on = on;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Boolean getShow()
+    {
+        return show;
+    }
+
+    /**
+     * @param show show or {@code null} for none
+     */
+    public EventContentBegin setShow( java.lang.Boolean show )
+    {
+        this.show = show;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Integer getTo()
+    {
+        return to;
+    }
+
+    /**
+     * @param to to or {@code null} for none
+     */
+    public EventContentBegin setTo( java.lang.Integer to )
+    {
+        this.to = to;
         return this;
     }
 
     @Override
-    public EmailReplyTo set( String fieldName, Object value )
+    public EventContentBegin set( String fieldName, Object value )
     {
-        return ( EmailReplyTo ) super.set( fieldName, value );
+        return ( EventContentBegin ) super.set( fieldName, value );
     }
 
     @Override
-    public EmailReplyTo clone()
+    public EventContentBegin clone()
     {
-        return ( EmailReplyTo ) super.clone();
+        return ( EventContentBegin ) super.clone();
     }
 
 }

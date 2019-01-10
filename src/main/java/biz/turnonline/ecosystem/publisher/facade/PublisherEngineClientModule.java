@@ -1,7 +1,7 @@
 package biz.turnonline.ecosystem.publisher.facade;
 
-import biz.turnonline.ecosystem.publisher.Publisher;
-import biz.turnonline.ecosystem.publisher.PublisherScopes;
+import biz.turnonline.ecosystem.publisher.PublisherEngine;
+import biz.turnonline.ecosystem.publisher.PublisherEngineScopes;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.common.base.Strings;
@@ -21,7 +21,7 @@ import java.security.GeneralSecurityException;
 import java.util.Set;
 
 /**
- * The Publisher Content Engine Client guice module as a default configuration.
+ * The Publisher &amp; Content Engine Client guice module as a default configuration.
  *
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  * @see PublisherEngineAdapterModule
@@ -37,10 +37,10 @@ public class PublisherEngineClientModule
 
     @Provides
     @Singleton
-    Publisher providePublisher( GoogleApiProxyFactory factory )
+    PublisherEngine providePublisher( GoogleApiProxyFactory factory )
     {
-        Set<String> scopes = PublisherScopes.all();
-        Publisher.Builder builder;
+        Set<String> scopes = PublisherEngineScopes.all();
+        PublisherEngine.Builder builder;
 
         String applicationName = factory.getApplicationName( API_PREFIX );
         String endpointUrl = factory.getEndpointUrl( API_PREFIX );
@@ -52,7 +52,7 @@ public class PublisherEngineClientModule
             initialized = factory.authorize( scopes, null, API_PREFIX );
             HttpRequestInitializer credential = initialized.getCredential();
 
-            builder = new Publisher.Builder( httpTransport, factory.getJsonFactory(), credential );
+            builder = new PublisherEngine.Builder( httpTransport, factory.getJsonFactory(), credential );
             builder.setApplicationName( applicationName );
 
             if ( !Strings.isNullOrEmpty( endpointUrl ) )
@@ -84,7 +84,7 @@ public class PublisherEngineClientModule
 
     @Provides
     @AccessToken( apiName = API_PREFIX )
-    ApiToken.Data providePublisherApiTokenData( Publisher client )
+    ApiToken.Data providePublisherApiTokenData( PublisherEngine client )
     {
         initialized.setServiceUrl( client.getBaseUrl() );
         return initialized.getTokenData();

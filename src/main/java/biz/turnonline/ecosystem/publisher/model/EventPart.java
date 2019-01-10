@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.publisher.model;
 
 /**
- * Model definition for EmailPayload.
+ * Model definition for EventPart.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Publisher & Content Engine. For a
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.publisher.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class EmailPayload
+public final class EventPart
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,127 +38,127 @@ public final class EmailPayload
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailPayloadContent content;
+    private java.lang.String description;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailFrom from;
+    private java.lang.Double finalPrice;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailRecipients recipients;
+    private java.lang.Integer order;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailReplyTo replyTo;
+    private java.lang.Double priceExclVat;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String subject;
+    private java.lang.String title;
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailPayloadContent getContent()
+    public java.lang.String getDescription()
     {
-        return content;
+        return description;
     }
 
     /**
-     * @param content content or {@code null} for none
+     * @param description description or {@code null} for none
      */
-    public EmailPayload setContent( EmailPayloadContent content )
+    public EventPart setDescription( java.lang.String description )
     {
-        this.content = content;
+        this.description = description;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailFrom getFrom()
+    public java.lang.Double getFinalPrice()
     {
-        return from;
+        return finalPrice;
     }
 
     /**
-     * @param from from or {@code null} for none
+     * @param finalPrice finalPrice or {@code null} for none
      */
-    public EmailPayload setFrom( EmailFrom from )
+    public EventPart setFinalPrice( java.lang.Double finalPrice )
     {
-        this.from = from;
+        this.finalPrice = finalPrice;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailRecipients getRecipients()
+    public java.lang.Integer getOrder()
     {
-        return recipients;
+        return order;
     }
 
     /**
-     * @param recipients recipients or {@code null} for none
+     * @param order order or {@code null} for none
      */
-    public EmailPayload setRecipients( EmailRecipients recipients )
+    public EventPart setOrder( java.lang.Integer order )
     {
-        this.recipients = recipients;
+        this.order = order;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailReplyTo getReplyTo()
+    public java.lang.Double getPriceExclVat()
     {
-        return replyTo;
+        return priceExclVat;
     }
 
     /**
-     * @param replyTo replyTo or {@code null} for none
+     * @param priceExclVat priceExclVat or {@code null} for none
      */
-    public EmailPayload setReplyTo( EmailReplyTo replyTo )
+    public EventPart setPriceExclVat( java.lang.Double priceExclVat )
     {
-        this.replyTo = replyTo;
+        this.priceExclVat = priceExclVat;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getSubject()
+    public java.lang.String getTitle()
     {
-        return subject;
+        return title;
     }
 
     /**
-     * @param subject subject or {@code null} for none
+     * @param title title or {@code null} for none
      */
-    public EmailPayload setSubject( java.lang.String subject )
+    public EventPart setTitle( java.lang.String title )
     {
-        this.subject = subject;
+        this.title = title;
         return this;
     }
 
     @Override
-    public EmailPayload set( String fieldName, Object value )
+    public EventPart set( String fieldName, Object value )
     {
-        return ( EmailPayload ) super.set( fieldName, value );
+        return ( EventPart ) super.set( fieldName, value );
     }
 
     @Override
-    public EmailPayload clone()
+    public EventPart clone()
     {
-        return ( EmailPayload ) super.clone();
+        return ( EventPart ) super.clone();
     }
 
 }

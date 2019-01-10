@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.publisher.facade.adaptee;
 
-import biz.turnonline.ecosystem.publisher.Publisher;
+import biz.turnonline.ecosystem.publisher.PublisherEngine;
 import biz.turnonline.ecosystem.publisher.model.EmailPayload;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -17,10 +17,10 @@ import java.io.IOException;
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 public class EmailPayloadAdaptee
-        extends AbstractInsertExecutorAdaptee<Publisher, EmailPayload>
+        extends AbstractInsertExecutorAdaptee<PublisherEngine, EmailPayload>
 {
     @Inject
-    public EmailPayloadAdaptee( Publisher client )
+    public EmailPayloadAdaptee( PublisherEngine client )
     {
         super( client );
     }

@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.publisher.model;
 
 /**
- * Model definition for EmailPayload.
+ * Model definition for EventContent.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Publisher & Content Engine. For a
@@ -30,135 +30,165 @@ package biz.turnonline.ecosystem.publisher.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class EmailPayload
+public final class EventContent
         extends com.google.api.client.json.GenericJson
 {
 
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private EmailPayloadContent content;
+    static
+    {
+        // hack to force ProGuard to consider EventPart used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( EventPart.class );
+    }
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailFrom from;
+    private EventContentBegin begin;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailRecipients recipients;
+    private com.google.api.client.util.DateTime deadline;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private EmailReplyTo replyTo;
+    private EventContentEnd end;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String subject;
+    private EventLocation location;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.util.List<EventPart> parts;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Integer seats;
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailPayloadContent getContent()
+    public EventContentBegin getBegin()
     {
-        return content;
+        return begin;
     }
 
     /**
-     * @param content content or {@code null} for none
+     * @param begin begin or {@code null} for none
      */
-    public EmailPayload setContent( EmailPayloadContent content )
+    public EventContent setBegin( EventContentBegin begin )
     {
-        this.content = content;
+        this.begin = begin;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailFrom getFrom()
+    public com.google.api.client.util.DateTime getDeadline()
     {
-        return from;
+        return deadline;
     }
 
     /**
-     * @param from from or {@code null} for none
+     * @param deadline deadline or {@code null} for none
      */
-    public EmailPayload setFrom( EmailFrom from )
+    public EventContent setDeadline( com.google.api.client.util.DateTime deadline )
     {
-        this.from = from;
+        this.deadline = deadline;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailRecipients getRecipients()
+    public EventContentEnd getEnd()
     {
-        return recipients;
+        return end;
     }
 
     /**
-     * @param recipients recipients or {@code null} for none
+     * @param end end or {@code null} for none
      */
-    public EmailPayload setRecipients( EmailRecipients recipients )
+    public EventContent setEnd( EventContentEnd end )
     {
-        this.recipients = recipients;
+        this.end = end;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public EmailReplyTo getReplyTo()
+    public EventLocation getLocation()
     {
-        return replyTo;
+        return location;
     }
 
     /**
-     * @param replyTo replyTo or {@code null} for none
+     * @param location location or {@code null} for none
      */
-    public EmailPayload setReplyTo( EmailReplyTo replyTo )
+    public EventContent setLocation( EventLocation location )
     {
-        this.replyTo = replyTo;
+        this.location = location;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getSubject()
+    public java.util.List<EventPart> getParts()
     {
-        return subject;
+        return parts;
     }
 
     /**
-     * @param subject subject or {@code null} for none
+     * @param parts parts or {@code null} for none
      */
-    public EmailPayload setSubject( java.lang.String subject )
+    public EventContent setParts( java.util.List<EventPart> parts )
     {
-        this.subject = subject;
+        this.parts = parts;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Integer getSeats()
+    {
+        return seats;
+    }
+
+    /**
+     * @param seats seats or {@code null} for none
+     */
+    public EventContent setSeats( java.lang.Integer seats )
+    {
+        this.seats = seats;
         return this;
     }
 
     @Override
-    public EmailPayload set( String fieldName, Object value )
+    public EventContent set( String fieldName, Object value )
     {
-        return ( EmailPayload ) super.set( fieldName, value );
+        return ( EventContent ) super.set( fieldName, value );
     }
 
     @Override
-    public EmailPayload clone()
+    public EventContent clone()
     {
-        return ( EmailPayload ) super.clone();
+        return ( EventContent ) super.clone();
     }
 
 }

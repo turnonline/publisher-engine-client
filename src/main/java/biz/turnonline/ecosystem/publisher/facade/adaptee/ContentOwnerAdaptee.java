@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.publisher.facade.adaptee;
 
-import biz.turnonline.ecosystem.publisher.Publisher;
+import biz.turnonline.ecosystem.publisher.PublisherEngine;
 import biz.turnonline.ecosystem.publisher.model.ContentOwner;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -17,10 +17,10 @@ import java.io.IOException;
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 public class ContentOwnerAdaptee
-        extends AbstractUpdateExecutorAdaptee<Publisher, ContentOwner>
+        extends AbstractUpdateExecutorAdaptee<PublisherEngine, ContentOwner>
 {
     @Inject
-    public ContentOwnerAdaptee( Publisher client )
+    public ContentOwnerAdaptee( PublisherEngine client )
     {
         super( client );
     }

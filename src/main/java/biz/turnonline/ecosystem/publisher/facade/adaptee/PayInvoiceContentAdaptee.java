@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.publisher.facade.adaptee;
 
-import biz.turnonline.ecosystem.publisher.Publisher;
+import biz.turnonline.ecosystem.publisher.PublisherEngine;
 import biz.turnonline.ecosystem.publisher.model.PayInvoiceContent;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
@@ -21,11 +21,11 @@ import java.util.Map;
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 public class PayInvoiceContentAdaptee
-        extends AbstractGoogleClientAdaptee<Publisher>
+        extends AbstractGoogleClientAdaptee<PublisherEngine>
         implements UpdateExecutorAdaptee<PayInvoiceContent>, DeleteExecutorAdaptee<PayInvoiceContent>
 {
     @Inject
-    public PayInvoiceContentAdaptee( Publisher client )
+    public PayInvoiceContentAdaptee( PublisherEngine client )
     {
         super( client );
     }
