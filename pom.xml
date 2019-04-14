@@ -9,6 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+    <groupId>biz.turnonline.ecosystem</groupId>
     <artifactId>turnonline-publisher-engine-client</artifactId>
     <version>0.9-SNAPSHOT</version>
     <packaging>jar</packaging>
