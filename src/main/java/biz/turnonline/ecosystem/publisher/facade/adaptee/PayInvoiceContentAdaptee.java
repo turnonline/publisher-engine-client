@@ -4,13 +4,12 @@ import biz.turnonline.ecosystem.publisher.PublisherEngine;
 import biz.turnonline.ecosystem.publisher.model.PayInvoiceContent;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
-import org.ctoolkit.restapi.client.adaptee.MediaProvider;
-import org.ctoolkit.restapi.client.adaptee.UpdateExecutorAdaptee;
 import org.ctoolkit.restapi.client.adapter.AbstractGoogleClientAdaptee;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
@@ -22,30 +21,12 @@ import java.util.Map;
  */
 public class PayInvoiceContentAdaptee
         extends AbstractGoogleClientAdaptee<PublisherEngine>
-        implements UpdateExecutorAdaptee<PayInvoiceContent>, DeleteExecutorAdaptee<PayInvoiceContent>
+        implements DeleteExecutorAdaptee<PayInvoiceContent>
 {
     @Inject
-    public PayInvoiceContentAdaptee( PublisherEngine client )
+    public PayInvoiceContentAdaptee( Provider<PublisherEngine> client )
     {
         super( client );
-    }
-
-    @Override
-    public Object prepareUpdate( @Nonnull PayInvoiceContent resource,
-                                 @Nonnull Identifier identifier,
-                                 @Nullable MediaProvider provider )
-            throws IOException
-    {
-        return client().invoice().update( identifier.getLong(), identifier.child().getString(), resource );
-    }
-
-    @Override
-    public Object executeUpdate( @Nonnull Object request,
-                                 @Nullable Map<String, Object> parameters,
-                                 @Nullable Locale locale )
-            throws IOException
-    {
-        return execute( request, parameters );
     }
 
     @Override

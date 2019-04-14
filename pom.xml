@@ -72,8 +72,8 @@
     </dependencies>
 
     <properties>
-        <ctoolkit-library-bom.version>9</ctoolkit-library-bom.version>
-        <ctoolkit-rest-facade-api.version>0.26</ctoolkit-rest-facade-api.version>
-        <ctoolkit-rest-facade-adapter.version>0.30</ctoolkit-rest-facade-adapter.version>
+        <ctoolkit-library-bom.version>10</ctoolkit-library-bom.version>
+        <ctoolkit-rest-facade-api.version>0.27</ctoolkit-rest-facade-api.version>
+        <ctoolkit-rest-facade-adapter.version>0.32</ctoolkit-rest-facade-adapter.version>
     </properties>
 </project>

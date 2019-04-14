@@ -9,6 +9,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractInsertExecutorAdaptee;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.io.IOException;
 
 /**
@@ -20,7 +21,7 @@ public class EmailPayloadAdaptee
         extends AbstractInsertExecutorAdaptee<PublisherEngine, EmailPayload>
 {
     @Inject
-    public EmailPayloadAdaptee( PublisherEngine client )
+    public EmailPayloadAdaptee( Provider<PublisherEngine> client )
     {
         super( client );
     }

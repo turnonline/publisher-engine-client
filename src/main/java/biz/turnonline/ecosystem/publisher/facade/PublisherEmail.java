@@ -53,15 +53,13 @@ public class PublisherEmail
      */
     public PublisherEmail body( @Nonnull String body )
     {
-        checkNotNull( body );
-
         EmailPayloadContent content = payload.getContent();
         if ( content == null )
         {
             content = new EmailPayloadContent();
             payload.setContent( content );
         }
-        content.setBody( body );
+        content.setBody( checkNotNull( body ) );
         return this;
     }
 
@@ -74,8 +72,6 @@ public class PublisherEmail
      */
     public PublisherEmail contentType( @Nonnull ContentType type )
     {
-        checkNotNull( type );
-
         EmailPayloadContent content = payload.getContent();
         if ( content == null )
         {
@@ -96,15 +92,13 @@ public class PublisherEmail
      */
     public PublisherEmail from( @Nonnull String email, @Nullable String name )
     {
-        checkNotNull( email );
-
         EmailFrom from = payload.getFrom();
         if ( from == null )
         {
             from = new EmailFrom();
             payload.setFrom( from );
         }
-        from.setEmail( email );
+        from.setEmail( checkNotNull( email, "Email is mandatory" ) );
         from.setName( name );
 
         return this;
@@ -120,15 +114,13 @@ public class PublisherEmail
      */
     public PublisherEmail replyTo( @Nonnull String email, @Nullable String name )
     {
-        checkNotNull( email );
-
         EmailReplyTo replyTo = payload.getReplyTo();
         if ( replyTo == null )
         {
             replyTo = new EmailReplyTo();
             payload.setReplyTo( replyTo );
         }
-        replyTo.setEmail( email );
+        replyTo.setEmail( checkNotNull( email, "Email is mandatory" ) );
         replyTo.setName( name );
 
         return this;
@@ -144,8 +136,6 @@ public class PublisherEmail
      */
     public PublisherEmail addTo( @Nonnull String email, @Nullable String name )
     {
-        checkNotNull( email );
-
         EmailRecipients recipients = payload.getRecipients();
         if ( recipients == null )
         {
@@ -163,7 +153,7 @@ public class PublisherEmail
         EmailRecipient recipient = new EmailRecipient();
         to.add( recipient );
 
-        recipient.setEmail( email );
+        recipient.setEmail( checkNotNull( email, "Email is mandatory" ) );
         recipient.setName( name );
 
         return this;
@@ -177,8 +167,6 @@ public class PublisherEmail
      */
     public PublisherEmail addTo( @Nonnull String emailAddress )
     {
-        checkNotNull( emailAddress );
-
         if ( emailAddress.contains( "," ) )
         {
             List<String> emails = Splitter
@@ -210,8 +198,6 @@ public class PublisherEmail
      */
     public PublisherEmail addCc( @Nonnull String email, @Nullable String name )
     {
-        checkNotNull( email );
-
         EmailRecipients recipients = payload.getRecipients();
         if ( recipients == null )
         {
@@ -229,7 +215,7 @@ public class PublisherEmail
         EmailRecipient recipient = new EmailRecipient();
         copy.add( recipient );
 
-        recipient.setEmail( email );
+        recipient.setEmail( checkNotNull( email, "Email is mandatory" ) );
         recipient.setName( name );
 
         return this;
@@ -243,8 +229,6 @@ public class PublisherEmail
      */
     public PublisherEmail addCc( @Nonnull String emailAddress )
     {
-        checkNotNull( emailAddress );
-
         if ( emailAddress.contains( "," ) )
         {
             List<String> emails = Splitter
@@ -276,8 +260,6 @@ public class PublisherEmail
      */
     public PublisherEmail addBcc( @Nonnull String email, @Nullable String name )
     {
-        checkNotNull( email );
-
         EmailRecipients recipients = payload.getRecipients();
         if ( recipients == null )
         {
@@ -295,7 +277,7 @@ public class PublisherEmail
         EmailRecipient recipient = new EmailRecipient();
         blind.add( recipient );
 
-        recipient.setEmail( email );
+        recipient.setEmail( checkNotNull( email, "Email is mandatory" ) );
         recipient.setName( name );
 
         return this;
@@ -309,8 +291,6 @@ public class PublisherEmail
      */
     public PublisherEmail addBcc( @Nonnull String emailAddress )
     {
-        checkNotNull( emailAddress );
-
         if ( emailAddress.contains( "," ) )
         {
             List<String> emails = Splitter
