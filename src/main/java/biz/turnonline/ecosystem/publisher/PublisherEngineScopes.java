@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.publisher;
 
 /**
- * Available OAuth 2.0 scopes for use with the TurnOnline.biz Publisher & Content Engine.
+ * Available OAuth 2.0 scopes for use with the TurnOnline.biz Publisher &amp; Content Engine.
  *
  * @since 1.4
  */

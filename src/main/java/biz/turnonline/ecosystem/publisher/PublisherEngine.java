@@ -22,7 +22,7 @@ package biz.turnonline.ecosystem.publisher;
  * Service definition for PublisherEngine (v1).
  *
  * <p>
- * TurnOnline.biz Ecosystem: Publisher & Content Engine microservice responsible for the content preparation and make it available for a third-parties.
+ * TurnOnline.biz Ecosystem: Publisher &amp; Content Engine microservice responsible for the content preparation and make it available for a third-parties.
  * </p>
  *
  * <p>
@@ -81,7 +81,7 @@ public class PublisherEngine
                         com.google.api.client.googleapis.GoogleUtils.MINOR_VERSION >= 15,
                 "You are currently running with version %s of google-api-client. " +
                         "You need at least version 1.15 of google-api-client to run version " +
-                        "1.25.0 of the TurnOnline.biz Publisher & Content Engine library.", com.google.api.client.googleapis.GoogleUtils.VERSION );
+                        "1.25.0 of the TurnOnline.biz Publisher &amp; Content Engine library.", com.google.api.client.googleapis.GoogleUtils.VERSION );
     }
 
     /**
