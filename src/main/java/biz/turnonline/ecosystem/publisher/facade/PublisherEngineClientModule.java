@@ -2,6 +2,8 @@ package biz.turnonline.ecosystem.publisher.facade;
 
 import biz.turnonline.ecosystem.publisher.PublisherEngine;
 import com.google.inject.AbstractModule;
+import com.google.inject.multibindings.MapBinder;
+import org.ctoolkit.restapi.client.adapter.ClientApi;
 
 /**
  * The Publisher &amp; Content Engine Client guice module as a default configuration.
@@ -18,5 +20,9 @@ public class PublisherEngineClientModule
     protected void configure()
     {
         bind( PublisherEngine.class ).toProvider( PublisherEngineProvider.class );
+
+        MapBinder<String, ClientApi> mapBinder;
+        mapBinder = MapBinder.newMapBinder( binder(), String.class, ClientApi.class );
+        mapBinder.addBinding( API_PREFIX ).to( PublisherEngineProvider.class );
     }
 }
