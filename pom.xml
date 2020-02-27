@@ -26,6 +26,23 @@
         <url>https://youtrack.turnonline.biz/youtrack/issues/TOB</url>
     </issueManagement>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
     <developers>
         <developer>
             <name>Aurel Medvegy</name>
