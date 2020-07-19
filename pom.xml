@@ -26,7 +26,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>biz.turnonline.ecosystem</groupId>
     <artifactId>turnonline-publisher-engine-client</artifactId>
-    <version>0.11</version>
+    <version>0.12-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Publisher &amp; Content Engine Java Client</name>
     <description>TurnOnline.biz Ecosystem Publisher &amp; Content Engine REST API Java Client</description>
@@ -35,7 +35,7 @@
         <connection>scm:git:[fetch=]git@github.com:turnonline/publisher-engine-client.git</connection>
         <developerConnection>scm:git:[push=]git@github.com:turnonline/publisher-engine-client.git</developerConnection>
         <url>https://github.com/turnonline/publisher-engine-client</url>
-        <tag>turnonline-publisher-engine-client-0.11</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
