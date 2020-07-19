@@ -178,12 +178,6 @@ public final class ContentOwner
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String subscriberAppId;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.util.List<java.lang.String> supportedLocales;
 
     /**
@@ -592,23 +586,6 @@ public final class ContentOwner
     public ContentOwner setStreet( java.lang.String street )
     {
         this.street = street;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getSubscriberAppId()
-    {
-        return subscriberAppId;
-    }
-
-    /**
-     * @param subscriberAppId subscriberAppId or {@code null} for none
-     */
-    public ContentOwner setSubscriberAppId( java.lang.String subscriberAppId )
-    {
-        this.subscriberAppId = subscriberAppId;
         return this;
     }
 

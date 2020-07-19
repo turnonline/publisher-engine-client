@@ -488,9 +488,6 @@
                 "street": {
                     "type": "string"
                 },
-                "subscriberAppId": {
-                    "type": "string"
-                },
                 "supportedLocales": {
                     "type": "array",
                     "items": {
