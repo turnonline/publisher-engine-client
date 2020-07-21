@@ -210,6 +210,13 @@
                         "x-example": "en_GB"
                     },
                     {
+                        "name": "vnd.turnon.cloud.request-hashcode",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "description": "The unique hash code associated with this request. If present, it helps to avoid double submission of the same request."
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "required": false,
