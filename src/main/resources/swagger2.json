@@ -179,7 +179,8 @@
                         "enum": [
                             "ACCOUNT_SIGN_UP",
                             "EVENT",
-                            "ISSUED_INVOICE"
+                            "ISSUED_INVOICE",
+                            "PURCHASE_SUMMARY"
                         ],
                         "x-example": "ISSUED_INVOICE"
                     },
