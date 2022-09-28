@@ -76,6 +76,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.google.api-client</groupId>
+                <artifactId>google-api-client</artifactId>
+                <version>1.33.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -105,8 +110,8 @@
     </dependencies>
 
     <properties>
-        <ctoolkit-library-bom.version>10</ctoolkit-library-bom.version>
-        <ctoolkit-rest-facade-api.version>0.27</ctoolkit-rest-facade-api.version>
-        <ctoolkit-rest-facade-adapter.version>0.32</ctoolkit-rest-facade-adapter.version>
+        <ctoolkit-library-bom.version>15</ctoolkit-library-bom.version>
+        <ctoolkit-rest-facade-api.version>0.29</ctoolkit-rest-facade-api.version>
+        <ctoolkit-rest-facade-adapter.version>0.38</ctoolkit-rest-facade-adapter.version>
     </properties>
 </project>
