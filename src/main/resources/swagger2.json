@@ -412,443 +412,62 @@
             },
             "description": "Identification of the Email that has been requested to be sent."
         },
-        "ContentOwner": {
-            "type": "object",
-            "properties": {
-                "accountId": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "The unique identification of the owner account (same to login_id)."
-                },
-                "email": {
-                    "type": "string",
-                    "description": "The current email associated with the owner account."
-                },
-                "analyticsAccount": {
-                    "type": "string"
-                },
-                "businessName": {
-                    "type": "string"
-                },
-                "legalForm": {
-                    "type": "string",
-                    "description": "The company legal form."
-                },
-                "city": {
-                    "type": "string"
-                },
-                "companyId": {
-                    "type": "string"
-                },
-                "contactEmail": {
-                    "type": "string",
-                    "description": "The company business email address considered as a contact email used for notification purposes related to this owner (supports comma separated list).\n\nIf it’s not provided, the owner’s email will be used by default."
-                },
-                "contactWebSite": {
-                    "type": "string",
-                    "description": "The public company contact website of the account."
-                },
-                "country": {
-                    "type": "string",
-                    "description": "The company ISO 3166 alpha-2 country code. It’s case insensitive."
-                },
-                "domain": {
-                    "type": "string"
-                },
-                "domicile": {
-                    "type": "string",
-                    "description": "The company ISO 3166 alpha-2 country code. It's case insensitive. Technically it's same as countryCode but the supported list is limited."
-                },
-                "gateways": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "headerDescription": {
-                    "type": "string"
-                },
-                "headerKeywords": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "latitude": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "locale": {
-                    "type": "string",
-                    "description": "The default owner locale, ISO 639 alpha-2 or alpha-3 language code."
-                },
-                "logoUrl": {
-                    "type": "string"
-                },
-                "longitude": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "paymentLink": {
-                    "type": "string"
-                },
-                "street": {
-                    "type": "string"
-                },
-                "supportedLocales": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "taxId": {
-                    "type": "string"
-                },
-                "vatId": {
-                    "type": "string"
-                },
-                "vatPayer": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "postcode": {
-                    "type": "string",
-                    "description": "The company postal code."
-                }
-            }
-        },
-        "EventContent": {
-            "type": "object",
-            "properties": {
-                "begin": {
-                    "description": "The event start day definition.",
-                    "$ref": "#/definitions/EventContent_Begin"
-                },
-                "end": {
-                    "description": "The event last day definition.",
-                    "$ref": "#/definitions/EventContent_End"
-                },
-                "deadline": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The last day to register. If not provided, the one day before begin.on will be set."
-                },
-                "seats": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "The number of seats available for sale."
-                },
-                "location": {
-                    "description": "An address where event will take place.",
-                    "$ref": "#/definitions/EventLocation"
-                },
-                "parts": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/EventPart"
-                    }
-                }
-            },
-            "description": "The event as a product definition extension."
-        },
-        "EventLocation": {
-            "type": "object",
-            "properties": {
-                "placeName": {
-                    "type": "string",
-                    "description": "The event place name or very short description."
-                },
-                "street": {
-                    "type": "string",
-                    "description": "The event place street and street number."
-                },
-                "city": {
-                    "type": "string",
-                    "description": "The event place city."
-                },
-                "country": {
-                    "type": "string",
-                    "description": "The event place ISO 3166 alpha-2 country code. It’s case insensitive."
-                },
-                "postcode": {
-                    "type": "string",
-                    "description": "The event place post code."
-                },
-                "infoEmail": {
-                    "type": "string",
-                    "description": "The contact email in order to provide more information regarding event."
-                },
-                "infoPhone": {
-                    "type": "string",
-                    "description": "The contact phone in order to provide more information regarding event."
-                },
-                "latitude": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The event place address latitude geographic coordinate."
-                },
-                "longitude": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The event place address longitude geographic coordinate."
-                }
-            }
-        },
-        "EventPart": {
-            "type": "object",
-            "properties": {
-                "title": {
-                    "type": "string",
-                    "description": "The event part title."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "The event part description."
-                },
-                "priceExclVat": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The price of this part excluding VAT."
-                },
-                "finalPrice": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The price of this part including VAT."
-                },
-                "order": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "Chronological order of parts of the event that follow one another."
-                }
-            }
-        },
-        "PayInvoiceContent": {
-            "type": "object",
-            "properties": {
-                "title": {
-                    "type": "string"
-                },
-                "applyReverseChargeText": {
-                    "type": "string"
-                },
-                "constantSymbol": {
-                    "type": "string"
-                },
-                "locale": {
-                    "type": "string",
-                    "description": "The content locale, ISO 639 alpha-2 or alpha-3 language code."
-                },
-                "currency": {
-                    "type": "string",
-                    "description": "The currency code based on the ISO 4217."
-                },
-                "hashCode": {
-                    "type": "string"
-                },
-                "headerDescription": {
-                    "type": "string"
-                },
-                "headerKeywords": {
-                    "type": "string"
-                },
-                "invoiceImageUrl": {
-                    "type": "string"
-                },
-                "invoiceKey": {
-                    "type": "string"
-                },
-                "issuedFor": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "The unique identification of the account that has been invoiced. The missing value means there is no association with an account at TurnOnline.biz Ecosystem."
-                },
-                "amountPay": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The remaining amount to pay out the invoice. It will have a zero value once invoice is fully settled."
-                },
-                "totalPrice": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "totalPriceExclVat": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "variableSymbol": {
-                    "type": "string"
-                },
-                "paymentKey": {
-                    "type": "string",
-                    "description": "The payment key as an ID to identify incoming payment related to this invoice. Might be generated at the client side. It may be the same value as the variable symbol, but not necessarily."
-                }
-            }
-        },
-        "JsonMap": {},
-        "ProductContent": {
-            "type": "object",
-            "properties": {
-                "altFinalPrice": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "altFinalPriceExclVat": {
-                    "type": "number",
-                    "format": "double"
-                },
-                "altPrice": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "comingSoon": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "locale": {
-                    "type": "string",
-                    "description": "The content locale, ISO 639 alpha-2 or alpha-3 language code."
-                },
-                "title": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "finalPrice": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The final price including VAT."
-                },
-                "finalPriceExclVat": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The final price excluding VAT."
-                },
-                "currency": {
-                    "type": "string",
-                    "description": "The item currency code based on the ISO 4217."
-                },
-                "headerDescription": {
-                    "type": "string"
-                },
-                "headerKeywords": {
-                    "type": "string"
-                },
-                "imageLegend": {
-                    "type": "string"
-                },
-                "imageTitle": {
-                    "type": "string"
-                },
-                "imageUrl": {
-                    "type": "string"
-                },
-                "productId": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "productName": {
-                    "type": "string"
-                },
-                "snippet": {
-                    "type": "string"
-                },
-                "subsidiary": {
-                    "description": "An optional subsidiary properties of the product. An arbitrary map of values in JSON structure that are owner specific.",
-                    "$ref": "#/definitions/JsonMap"
-                },
-                "url": {
-                    "type": "string"
-                },
-                "event": {
-                    "description": "The product extension by event specification.",
-                    "$ref": "#/definitions/EventContent"
-                }
-            }
-        },
-        "TermsContent": {
-            "type": "object",
-            "properties": {
-                "title": {
-                    "type": "string"
-                },
-                "locale": {
-                    "type": "string",
-                    "description": "The content locale, ISO 639 alpha-2 or alpha-3 language code."
-                },
-                "fullTerms": {
-                    "type": "string"
-                },
-                "headerDescription": {
-                    "type": "string"
-                },
-                "headerKeywords": {
-                    "type": "string"
-                }
-            }
-        },
         "Error": {
             "type": "object",
+            "required": [
+                "error"
+            ],
             "properties": {
                 "error": {
+                    "description": "Error body wrapper.",
+                    "$ref": "#/definitions/ErrorBody"
+                }
+            }
+        },
+        "ErrorBody": {
+            "type": "object",
+            "required": [
+                "code",
+                "errors",
+                "message"
+            ],
+            "properties": {
+                "code": {
                     "type": "integer",
                     "format": "int32",
-                    "description": "The HTTP status code"
+                    "description": "The HTTP status code."
+                },
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ErrorReason"
+                    }
                 },
                 "message": {
                     "type": "string",
-                    "description": "The error message"
+                    "description": "The error message."
                 }
             }
         },
-        "EventContent_Begin": {
+        "ErrorReason": {
             "type": "object",
+            "required": [
+                "domain",
+                "message",
+                "reason"
+            ],
             "properties": {
-                "show": {
-                    "type": "boolean",
-                    "description": "The boolean indication whether to publish (if defined) From - To time or not.",
-                    "default": true
-                },
-                "on": {
+                "domain": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The event start date."
+                    "description": "The overall scope of the error message."
                 },
-                "from": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "The event start time."
-                },
-                "to": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "The event end time of the 1st day."
-                }
-            }
-        },
-        "EventContent_End": {
-            "type": "object",
-            "properties": {
-                "show": {
-                    "type": "boolean",
-                    "description": "The boolean indication whether to publish (if defined) From - To time or not.",
-                    "default": false
-                },
-                "on": {
+                "message": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The event end date."
+                    "description": "The detailed error message."
                 },
-                "from": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "The event start time of the last day."
-                },
-                "to": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "The event end time."
+                "reason": {
+                    "type": "string",
+                    "description": "The error reason (error key)."
                 }
             }
         }
