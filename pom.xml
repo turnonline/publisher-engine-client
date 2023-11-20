@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.ctoolkit.maven</groupId>
         <artifactId>ctoolkit-public</artifactId>
-        <version>2</version>
+        <version>4</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -110,8 +110,8 @@
     </dependencies>
 
     <properties>
-        <ctoolkit-library-bom.version>15</ctoolkit-library-bom.version>
-        <ctoolkit-rest-facade-api.version>0.29</ctoolkit-rest-facade-api.version>
+        <ctoolkit-library-bom.version>16</ctoolkit-library-bom.version>
+        <ctoolkit-rest-facade-api.version>0.30</ctoolkit-rest-facade-api.version>
         <ctoolkit-rest-facade-adapter.version>0.38</ctoolkit-rest-facade-adapter.version>
     </properties>
 </project>

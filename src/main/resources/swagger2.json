@@ -211,7 +211,7 @@
                         "x-example": "en_GB"
                     },
                     {
-                        "name": "vnd.turnon.cloud.request-hashcode",
+                        "name": "Vnd-ConnecSys-Request-Hashcode",
                         "in": "header",
                         "required": false,
                         "type": "string",
